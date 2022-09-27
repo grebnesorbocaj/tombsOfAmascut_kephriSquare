@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>ABC</title>
+  </head>
+  <body>
+    <form style="margin: 0; padding: 30px;">
+      <p style=""> Input starting state or choose random option: 
+        <input style="display: inline;" type="text" id="startState" value="00000000"> 
+        <input style="display: inline;" type="button" id="choose" value="Submit" onclick="chooseStart()">
+        <input style="display: inline;" type="button" id="random" value="Random" onclick="randomStart()">
+      </p>
+    </form>
+    <div id="guide">To solve, click:</div>
+
+    <div id="puzzle">
+      <div class="row">
+        <div id="1" class="unlitTile" onclick="flipTile('1')">1</div>
+        <div id="2" class="unlitTile" onclick="flipTile('2')">2</div>
+        <div id="3" class="unlitTile" onclick="flipTile('3')">3</div>
+      </div>
+
+      <div class="row">
+        <div id="4" class="unlitTile" onclick="flipTile('4')">4</div>
+        <div id="empty" class="unlitTile"></div>
+        <div id="5" class="unlitTile" onclick="flipTile('5')">5</div>
+      </div>
+      
+      <div class="row">
+        <div id="6" class="unlitTile" onclick="flipTile('6')">6</div>
+        <div id="7" class="unlitTile" onclick="flipTile('7')">7</div>
+        <div id="8" class="unlitTile" onclick="flipTile('8')">8</div>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
