@@ -29,16 +29,25 @@ function flipTile(id){
     var tileId = tiles[index]
     var TILE = document.getElementById(tileId);
     var currentClass = TILE.className;
+    var SOLVE = document.getElementById("solve");
 
     if (id == tileId){
       if (currentClass == "unlitTile highlight") {
         TILE.className = "litTile";
       } else if (currentClass == "unlitTile") {
-        TILE.className = "litTile highlight"
-      } else if (currentClass == "litTile highlight") {
-        TILE.className = "unlitTile";
+        if (SOLVE.checked) {
+          TILE.className = "litTile highlight"
+        } else{
+          TILE.className = "litTile"
+        }
+      } else if (currentClass == "litTile") {
+        if (SOLVE.checked) {
+          TILE.className = "unlitTile highlight"
+        } else{
+          TILE.className = "unlitTile"
+        }
       } else {
-        TILE.className = "unlitTile highlight";
+        TILE.className = "unlitTile";
       }
     } 
     else {
@@ -121,10 +130,14 @@ function setPuzzle(puzzleIndex, style){
           setTile(tileIndex);
         }
       }
-      for (const tileIndex in solution) {
-        console.log(solution[tileIndex])
-        const tile = solution[tileIndex]
-        highlightTile(tile);
+      
+      var SOLVE = document.getElementById("solve");
+      if (SOLVE.checked) {
+        for (const tileIndex in solution) {
+          console.log(solution[tileIndex])
+          const tile = solution[tileIndex]
+          highlightTile(tile);
+        }
       }
 
       var GUIDE = document.getElementById("guide");
